@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Add a default marker</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+  body { margin: 0; padding: 0; }
+  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  .map-overlay{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div id="map"></div>
+<div class="map-overlay top">
+  <button style="font-size: 2em;" onclick="move()">
+    Show stops between MIT and Harvard
+  </button>
+</div>
+
+<script>
+
+mapboxgl.accessToken = 
+'pk.eyJ1Ijoia3Jpc3Rlbm1rZW5ueSIsImEiOiJjbGJqdDNiYmoxNGlyM3BtbWhjNTU5MmxsIn0.yg0i6D71sN2pk.eyJ1Ijoia3Jpc3Rlbm1rZW5ueSIsImEiOiJjbGN4cTEyYnIyNjFhM3VucWMycTl4MnI2In0.t0REvlbtpBDP-f4RkisZVAv209ToTJltgpk.eyJ1Ijoia3Jpc3Rlbm1rZW5ueSIsImEiOiJjbGJqdDNiYmoxNGlyM3BtbWhpk.eyJ1Ijoia3Jpc3Rlbm1rZW5ueSIsImEiOiJjbGN3eXVkeWUxOTg5M3Vxeml1ZDZ2NGhzIn0.jC-ASXUXIkfruzQoqHQ4dQjNTU5MmxsIn0.yg0i6D71sN2v209ToTJltg'
+
+ const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/street-v11',
+  center: [-71.104081, 42.365554],
+  zoom: 14
+});
+
+var marker = new mapboxgl.Marker()
+  .setLngLat([-71.092761, 42.357575])
+  .addTo(map);
+
+  const busStops = [
+    [-71.093729, 42.359244]
+    
+  ]
+
+
+</script>
+</body>
+</html>
